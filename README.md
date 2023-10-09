@@ -1,4 +1,4 @@
-[![Github commit](https://img.shields.io/github/last-commit/fdjutant/NLP-on-financial-statements)](https://github.com/fdjutant/NLP-on-financial-statements)
+[![Github commit](https://img.shields.io/github/last-commit/fdjutant/NLP-on-financial-statements/master)](https://github.com/fdjutant/NLP-on-financial-statements)
 
 # Natural language processing (NLP) on Financial statements
 ## Project overview
