@@ -26,16 +26,16 @@ Below are the plots indicating these metrics for the AMZN index. One can observe
 
 ![Alt text](./images/cosine-similarities.png?raw=true "Cosine similarities across annual 10-K documents of AMZN for each sentiment word")
 
-
 ### Alpha factor evaluation
 Finally, the alpha factor for each sentiment word can be assessed. Annual factor returns reveal reasonable results, with the sharpest rise occurring between 1998 and 2003 for sentiment words "positive," "constraining," "litigious," and "interesting." Conversely, the most significant declines happened between 2005 and 2006 for sentiment words "positive," "constraining," and "litigious."
+
 ![Alt text](./images/factor-returns.png?raw=true "Sentiment-based factor returns")
 
-The monotonicity of the alpha factors was also evaluated through quantile analysis.
+The monotonicity of the alpha factors was also evaluated through quantile analysis.A turnover analysis, indicating how much the alpha factors may impact the portfolio, can be assessed by computing the factor rank autocorrelation.
+
 ![Alt text](./images/quantile-analysis.png?raw=true "Quantile analysis for every sentiment-based alpha factor")
 
-A turnover analysis, indicating how much the alpha factors may impact the portfolio, can be assessed by computing the factor rank autocorrelation.
-![Alt text](./images/Factor-rank-autocorrelation.png?raw=true "Factor rank autocorrelation")
+![Alt text](./images/factor-rank-autocorrelation.png?raw=true "Factor rank autocorrelation")
 
 ## Credits
 The project was built as part of a practical course in systematic trading from Udacity: [AI for trading](https://www.udacity.com/course/ai-for-trading--nd880)
