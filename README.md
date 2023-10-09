@@ -9,15 +9,15 @@ In this project, an alpha factor model was built by extracting information from 
 Throughout this project, 10-K documents were downloaded directly from the SEC.
 
 ## Project description
-## Pre-processing 10-K documents
+### Pre-processing 10-K documents
 To start, the annual 10-K documents for each company in the stock universe considered here were downloaded from the SEC. The text from these documents was cleaned up by first removing its HTML tags using `BeautifulSoup` package, followed by lemmatization to group together different forms of a word so they can be treated as one. Lastly, stopwords such as "the," "a," and "an" were removed. At the end of this step, the text is ready to be processed for sentiment analysis.
 
-## Sentiment-based evaluation 
+### Sentiment-based evaluation 
 Every word within any 10-K document in the corpus is classified as "negative," "positive," "uncertainty," "litigious," "constraining," "superfluous," or "modal." These words are part of the Loughran McDonald sentiment word list.
 
 To achieve this, each word is categorized into a sentiment using `CountVectorizer` in sklearn. However, this approach is less effective for a long corpus, such as a collection of 10-K documents, because some non-relevant words may appear too frequently or too rarely within the corpus. These words tend to be statistically less important and must be penalized. Hence, these counts can be scaled by the logarithmic ratio of the total number of documents in the corpus to the number of documents that contain the particular word. This is known as Term Frequency-Inverse Document Frequency (TF-IDF), which is implemented through `TfidfVectorizer` in sklearn.
 
-## Alpha factor determination
+### Alpha factor determination
 For each index, the count vector of an individual sentiment word between adjacent annual 10-K documents provides the trends that can be used to create a vector of annual alpha factors. By doing this, one obtains alpha factors for the eight sentiment words. To evaluate this, Jaccard similarities and Cosine similarities were computed. In this context, the values from Cosine similarities were used to create the alpha factors for each sentiment word.
 
 Below are the plots indicating these metrics for the AMZN index. One can observe that both metrics show a significant difference between 1999 and 2003 before the documents appear more similar from 2007 onwards, particularly in the cosine similarity evaluation.
@@ -27,7 +27,7 @@ Below are the plots indicating these metrics for the AMZN index. One can observe
 ![Alt text](./images/cosine-similarities.png?raw=true "Cosine similarities across annual 10-K documents of AMZN for each sentiment word")
 
 
-## Alpha factor evaluation
+### Alpha factor evaluation
 Finally, the alpha factor for each sentiment word can be assessed. Annual factor returns reveal reasonable results, with the sharpest rise occurring between 1998 and 2003 for sentiment words "positive," "constraining," "litigious," and "interesting." Conversely, the most significant declines happened between 2005 and 2006 for sentiment words "positive," "constraining," and "litigious."
 ![Alt text](./images/factor-returns.png?raw=true "Sentiment-based factor returns")
 
